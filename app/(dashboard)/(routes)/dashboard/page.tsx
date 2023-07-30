@@ -5,7 +5,6 @@ const DashboardPage = () => {
   return (
     <div>
       <Button variant="destructive">DashboardPage</Button>
-      <UserButton afterSignOutUrl="/" />
     </div>
   );
 };
