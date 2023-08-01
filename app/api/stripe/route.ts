@@ -31,14 +31,14 @@ export async function GET() {
     const stripeSession = await stripe.checkout.sessions.create({
       success_url: settingsUrl,
       cancel_url: settingsUrl,
-      payment_method_types: ["card", "paypal"],
+      payment_method_types: ["card"],
       mode: "subscription",
       billing_address_collection: "auto",
       customer_email: user.emailAddresses[0].emailAddress,
       line_items: [
         {
           price_data: {
-            currency: "IND",
+            currency: "INR",
             product_data: {
               name: "ThinkTank Pro",
               description: "Unlimited AI Generations",

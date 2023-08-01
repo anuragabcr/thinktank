@@ -19,6 +19,7 @@ import { cn } from "@/lib/utils";
 import UserAvatar from "@/components/UserAvatar";
 import BotAvatar from "@/components/BotAvatar";
 import { useProModal } from "@/hooks/use-pro-modal";
+import toast from "react-hot-toast";
 
 const ConversationPage = () => {
   const proModal = useProModal();
@@ -54,6 +55,7 @@ const ConversationPage = () => {
         proModal.onOpen();
       } else {
         console.log(error);
+        toast.error("Something went Wrong\nTry Again");
       }
     } finally {
       router.refresh();
